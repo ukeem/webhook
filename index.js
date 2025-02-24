@@ -37,13 +37,13 @@ function deploy(script, res) {
 }
 
 // Вебхук для сервера
-app.post("/hook/server", verifySignature, (req, res) => {
+app.post("/whserver", verifySignature, (req, res) => {
 	console.log("🚀 Получен вебхук для сервера...");
 	deploy("./server.sh", res);
 });
 
 // Вебхук для клиента
-app.post("/hook/client", verifySignature, (req, res) => {
+app.post("/whclient", verifySignature, (req, res) => {
 	console.log("🚀 Получен вебхук для клиента...");
 	deploy("./client.sh", res);
 });
